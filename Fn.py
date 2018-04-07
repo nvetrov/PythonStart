@@ -1,7 +1,9 @@
+import datetime as d
 print('Hi GitHub')
 print('Ubunta here')
 print('Commit in linux')
 print("linux forever")
+print(d.datetime.today())
 
 """
 Исключение
