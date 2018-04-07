@@ -1,5 +1,6 @@
 print('Hi GitHub')
 print('Ubunta here')
+print('Commit in linux')
 
 """
 Исключение
