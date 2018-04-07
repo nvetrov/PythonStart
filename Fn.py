@@ -4,6 +4,8 @@ print('Ubunta here')
 print('Commit in linux')
 print("linux forever")
 print(d.datetime.today())
+print('Commit1')
+
 
 """
 Исключение
