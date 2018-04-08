@@ -1,7 +1,74 @@
-import datetime as d
-print('delete everything')
-print(d.datetime.today())
-print("Last!")
+# class Terminal:
+#     def hello(self,user_name):
+#         print('self is object itself', self)
+#         print('hello', user_name)
+#
+# t = Terminal()
+# t.hello('Nikita')
+# t.hello('Vova')
+
+class Window:
+    is_opened = False
+
+    def open(self):
+        self.is_opened = not self.is_opened
+        print('Windows is now', self.is_opened)
+
+
+w = Window()
+w1 = Window()
+
+print('Initial state', w.is_opened, w1.is_opened)
+w.open()
+print('New state', w.is_opened, w1.is_opened)
+
+# class Door:
+#     def open(self):
+#         print('self is', self)
+#         print('Door is opened!')
+#         self.opened = True
+#
+# d = Door()
+# print(d)
+# d.open()
+#
+
+
+'''
+def return_namy():
+   return (1, 10)
+
+x1,x2 = return_namy()
+print(x1,x2)
+
+def find_min_max(data):
+    min_num = min(data)
+    max_num = max(data)
+    return (min_num,max_num)
+
+minimum, maximum = find_min_max([1,9,0,-2])
+print(minimum,maximum)
+
+def summa(*args):
+    print('input:',args)
+    return sum(args)
+accept_args = [1,2,3]
+try:
+    Suma = summa(accept_args)
+except TypeError as e:
+    print('Error', e)
+
+Suma = summa(*accept_args)
+print(Suma)
+
+
+'''
+
+
+
+
+
+
 """
 Исключение
 l = [1, 9]
