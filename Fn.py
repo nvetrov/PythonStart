@@ -1,6 +1,7 @@
 import datetime as d
 print('delete everything')
 print(d.datetime.today())
+print("Last!")
 """
 Исключение
 l = [1, 9]
