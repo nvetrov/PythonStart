@@ -1,14 +1,6 @@
 import datetime as d
-print('Hi GitHub')
-print('Ubunta here')
-print('Commit in linux')
-print("linux forever")
+print('delete everything')
 print(d.datetime.today())
-print('Commit1')
-print('Commit2')
-print('Commit4')
-
-
 """
 Исключение
 l = [1, 9]
