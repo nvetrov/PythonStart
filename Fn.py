@@ -1,37 +1,102 @@
-# class Terminal:
-#     def hello(self,user_name):
-#         print('self is object itself', self)
-#         print('hello', user_name)
-#
-# t = Terminal()
-# t.hello('Nikita')
-# t.hello('Vova')
-
-class Window:
-    is_opened = False
-
-    def open(self):
-        self.is_opened = not self.is_opened
-        print('Windows is now', self.is_opened)
+class Parent(object):
+    def call(self):
+        print('Parent')
 
 
-w = Window()
-w1 = Window()
+class Child(Parent):
+    def call(self):
+        print('Child')
 
-print('Initial state', w.is_opened, w1.is_opened)
-w.open()
-print('New state', w.is_opened, w1.is_opened)
 
-# class Door:
-#     def open(self):
-#         print('self is', self)
-#         print('Door is opened!')
-#         self.opened = True
-#
-# d = Door()
-# print(d)
-# d.open()
-#
+class Example(object):
+    def call(self):
+        print('Ex')
+
+
+def call_obj(obj):
+    obj.call()
+
+
+def sum_two_objects(one, two):
+    return one + two
+
+
+call_obj(Child())
+call_obj(Parent())
+
+'''
+_a  Не рекомендуется менять
+__с  НЕ менять
+
+
+class Example(object):
+    def __init__(self):
+        self.a = 1
+        self._b = 2
+        self.__c = 3
+        print('{} {} {}'.format(
+            self.a, self._b, self.__c))
+
+    def call(self):
+        print('Called!')
+
+    def _protected_method(self):
+        pass
+
+    def __private_method(self):
+        pass
+
+
+class Inh(Example):
+    def nnn(self):
+        self._b = 5
+        self.__c = 6
+
+
+
+example = Example()
+print(example.a)
+print(example._b)
+
+
+try:
+    print(example.__c)
+except AttributeError as ex:
+    print(ex)
+'''
+
+'''
+Наследование
+
+
+class Calc(object):
+    def __init__(self, number):
+        self.number = number
+
+    def cacl_and_print(self):
+        self.print_number
+        value = self.calc_value()
+        self.print_number(value)
+
+    def calc_value(self):
+        return self.number * 10 + 2
+
+    def print_number(self, value_to_print):
+        print('------------')
+        print('Number is', value_to_print)
+        print('------------')
+
+a = Calc(3)
+a.cacl_and_print()
+
+class CalcExtraValue(Calc):
+    def calc_value(self):
+        return self.number  - 100
+b = CalcExtraValue(3)
+b.cacl_and_print()
+# Класс 
+'''
+
 
 
 '''
@@ -64,11 +129,6 @@ print(Suma)
 
 '''
 
-
-
-
-
-
 """
 Исключение
 l = [1, 9]
@@ -100,8 +160,6 @@ finally:
 # except KeyError as e:
 #     print("Got it",e)
 """
-
-
 
 # try:
 #     a = 1 / int(input('x: '))
@@ -142,7 +200,6 @@ else:
     print('Wrong, redo it!')
 
 """
-
 
 # r = requests.get('https://api.github.com/events')
 # r = requests.get('https://api.github.com/user', auth=('nvetrov@gmail.com', 'C1vmdpalc33'))
@@ -278,8 +335,6 @@ print(new_list)
 # print(A)
 
 
-
-
 # l1 = list()
 # l1 += [1,2,3]
 # l1.append(4)
@@ -293,7 +348,7 @@ print(new_list)
 # print(l1)
 # # import sys
 
-    # s2 = inf.readline().strip() # брать все служебные символы при чтение строки   '\t abc \ n'.strip() -> 'abc'
+# s2 = inf.readline().strip() # брать все служебные символы при чтение строки   '\t abc \ n'.strip() -> 'abc'
 
 # tuple1 = (1, 2, 'string', 'one more', False, None)
 # print(tuple1)
@@ -341,8 +396,6 @@ print(new_list)
 # print(S)
 
 
-
-
 # from itertools import groupby
 #
 # command1 = 'switchport trunk allowed vlan 1,3,10,20,30,100'
@@ -378,30 +431,12 @@ Sample Input:
 #
 
 
-
-
 """
 Напишите программу, которая считывает список чисел lst из первой строки и число x из второй строки,
 которая выводит все позиции, на которых встречается число x в переданном списке lst.
 Позиции нумеруются с нуля, если число x не встречается в списке, вывести строку "Отсутствует" (без кавычек, с большой буквы).
 Позиции должны быть выведены в одну строку, по возрастанию абсолютного значения.
 """
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 '''
 Напишите программу, которая выводит часть последовательности 1 2 2 3 3 3 4 4 4 4 5 5 5 5 5 ...
@@ -475,10 +510,6 @@ print(b[:strLength], end='')
 #         print(M[g],end=' ')
 #
 #
-
-
-
-
 
 
 """
@@ -617,8 +648,6 @@ with open('file.txt', 'w') as ouf:
      ouf.write('Some.txt\n')
      ouf.write(str(25))
 """
-
-
 
 # def f(x):
 #     return x**2
