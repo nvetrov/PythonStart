@@ -1,28 +1,89 @@
-class Parent(object):
-    def call(self):
-        print('Parent')
+
+# Задача:
+# 1. Создать  классa basket корзина, у которого можно выставить разную вместительлность для разных объектов.
+#     В классе корзина можно помещать разные объекты.
+# 2. Создать класс Покет, в который тоже можно помещать предметы. У него тоже есть вместимость.
+# 3. Любой класс - создать. Можно помещать в корзину или в пакет.
+# 4. Если вместимости недостаточно, сказать что объект поместить нельзя.
+#
+
+class Basket(object):
+    def __init__(self, size):
+        self.size = size
+
+    def change_size(self, size):
+        self.size = size
+
+    def get_size(self):
+        print("Basket size is {} ".format(self.size))
+
+    def put_smth(self,smth):
+        if smth.size <= self.size:
+            print('{} is  in a basket'.format(smth))
+        else:
+            print('This basket size = {}'.format(self.size))
+
+class Bag(Basket):
+    def get_size(self):
+        print('This is Bag size {}'.format(self.size))
+
+    def put_smth(self, smth):
+        if smth.size <= self.size:
+            print('{} is  in a Bag'.format(smth))
+        else:
+            print('{} is to big for Bag with size = {} '.format(smth, self.size))
+
+class Thing(object):
+    def __init__(self, size):
+        self.size = size
+
+box1 = Basket(20)
+box1.get_size()
+
+bag1 = Bag(123)
+bag1.get_size()
+
+smt1 = Thing(10)
+smt2 = Thing(30)
+smt3 = Thing(130)
+
+box1.put_smth(smt1)
+box1.put_smth(smt2)
 
 
-class Child(Parent):
-    def call(self):
-        print('Child')
+bag1.put_smth(smt2)
+bag1.put_smth(smt3)
+
+box1.change_size(1000)
+box1.get_size()
 
 
-class Example(object):
-    def call(self):
-        print('Ex')
 
-
-def call_obj(obj):
-    obj.call()
-
-
-def sum_two_objects(one, two):
-    return one + two
-
-
-call_obj(Child())
-call_obj(Parent())
+# class Parent(object):
+#     def call(self):
+#         print('Parent')
+#
+#
+# class Child(Parent):
+#     def call(self):
+#         print('Child')
+#
+#
+# class Example(object):
+#     def call(self):
+#         print('Ex')
+#
+#
+# def call_obj(obj):
+#     obj.call()
+#
+#
+# def sum_two_objects(one, two):
+#     return one + two
+#
+#
+# call_obj(Child())
+# call_obj(Parent())
 
 '''
 _a  Не рекомендуется менять
